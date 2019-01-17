@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Category list!</h1>
+  <form action="/categories/" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Post</button>
+  </form>
+  <ul>
+    {% for item in categories %}
+      <li>
+        <h3>{{ item.name }}</h3>
+        <img src="{{ item.cover.url }}" alt="{{ item.name }}">
+      </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

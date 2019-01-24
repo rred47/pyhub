@@ -56,6 +56,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
+            'videos/templates/categories'
             'videos/templates/videos'
         ],
         'APP_DIRS': True,
